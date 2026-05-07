@@ -3,9 +3,7 @@
 #include <boost/beast/http.hpp>
 #include <iostream>
 #include <string>
-
-#include "utils.hpp"
-
+#include "../include/utils.hpp"
 namespace beast = boost::beast;
 namespace http = beast::http;
 namespace net = boost::asio;
@@ -14,9 +12,7 @@ using tcp = net::ip::tcp;
 int main() {
   net::io_context ioc;
   tcp::acceptor acceptor(ioc, tcp::endpoint(tcp::v4(), 8080));
-
   std::cout << "Listening on http://localhost:8080\n";
-
   while (true) {
     try {
       tcp::socket socket(ioc);
